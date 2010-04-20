@@ -22,8 +22,8 @@
 	</target>
 
 	<target name="package">
-		<delete file="dist/pdfgen.jar" />
-        <jar destfile="dist/pdfgen.jar">
+		<delete file="scripts/pdfgen.jar" />
+        <jar destfile="scripts/pdfgen.jar">
             <fileset dir="bin"/>
             <zipfileset src="lib/core-renderer.jar" excludes="META-INF/*" />
             <zipfileset src="lib/iText-2.0.8.jar" excludes="META-INF/*" />
@@ -38,9 +38,10 @@
         </jar>
         <delete file="dist/pdfgen.zip" />
         <zip destfile="dist/pdfgen.zip">
-            <fileset file="dist/pdfgen.jar"/>
-            <fileset file="dist/render.bat"/>
-            <fileset dir="." includes="sample/**"/>
+            <fileset dir=".">
+                <include name="sample/**"/>
+                <include name="scripts/**"/>
+            </fileset>
         </zip>
 	</target>
 

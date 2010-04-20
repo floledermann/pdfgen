@@ -1,0 +1,4 @@
+glob:bin/
+glob:dist/pdfgen.jar
+glob:dist/pdfgen.zip
+glob:sample/webdings.ttf

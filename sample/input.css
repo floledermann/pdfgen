@@ -1,0 +1,31 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+	
+@font-face {
+	font-family: Webdings;
+	src:url('webdings.ttf');
+	-fs-pdf-font-embed: embed;
+	}
+
+@page:first {
+  size: 297mm 210mm;
+}
+
+@page {
+  size: 210mm 297mm;
+  margin-left:12,7mm;
+  margin-right:12,7mm;
+  margin-top:11,5mm;
+  margin-bottom:11,5mm;
+}
+  
+.firstPage{
+  width:274mm; height:184.6mm;
+}
+  
+.secondPage{
+  width:184.6mm; height:271.5mm;
+}
+

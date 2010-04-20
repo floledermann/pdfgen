@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<project name="PDFGen" basedir=".">
+
+	<description>Buildfile for PDFGen</description>
+
+	<target name="init" description="Create output folders">
+
+		<mkdir dir="dist" />
+
+	</target>
+
+	<target name="compile" depends="init" description="Compile project">
+
+		<javac destdir="bin" failonerror="true" srcdir="src/java" debug="true">
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="package">
+		<delete file="dist/pdfgen.jar" />
+        <jar destfile="dist/pdfgen.jar">
+            <fileset dir="bin"/>
+            <zipfileset src="lib/core-renderer.jar" excludes="META-INF/*" />
+            <zipfileset src="lib/iText-2.0.8.jar" excludes="META-INF/*" />
+            <manifest>
+                <attribute name="Built-By" value="floledermann.com" />
+                <attribute name="Implementation-Vendor" value="Florian Ledermann Digital Infrastructures" />
+                <attribute name="Implementation-Title" value="PDFGen" />
+                <attribute name="Implementation-Version" value="1.0" />
+                <!--<attribute name="Class-Path" value="lib/core-renderer.jar;lib/iText-2.0.8.jar" />-->
+                <attribute name="Main-Class" value="com.floledermann.pdf.PDFRenderer" />
+            </manifest>
+        </jar>
+        <delete file="dist/pdfgen.zip" />
+        <zip destfile="dist/pdfgen.zip">
+            <fileset file="dist/pdfgen.jar"/>
+            <fileset file="dist/render.bat"/>
+            <fileset dir="." includes="sample/**"/>
+        </zip>
+	</target>
+
+</project>

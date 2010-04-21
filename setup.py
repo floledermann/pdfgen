@@ -9,7 +9,7 @@ setup(
     author='Flo Ledermann',
     author_email='ledermann@ims.tuwien.ac.at',
     url='http://bitbucket.org/floledermann/pdfgen/',
-    package_dir = {'': 'src/python'}
+    package_dir = {'': 'src/python'},
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',

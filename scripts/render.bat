@@ -1,1 +1,1 @@
-java -cp bin;lib/core-renderer.jar;lib/iText-2.0.8.jar com.floledermann.pdf.PDFRenderer ../sample/input.html output.pdf
+java -cp pdfgen.jar com.floledermann.pdf.PDFRenderer ../sample/input.html output.pdf

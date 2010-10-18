@@ -41,13 +41,15 @@ public class PDFRenderer {
         }
         else {
             // read from stdin
-            OutputStream inputBytes = new ByteArrayOutputStream(1024);
+            ByteArrayOutputStream inputBytes = new ByteArrayOutputStream(1024);
             int len;
             byte buf[] = new byte[1024];
             while ((len=System.in.read(buf))>0) {
                 inputBytes.write(buf, 0, len);
             }
-            inputText = inputBytes.toString();
+            // TODO: add command line attribute for encoding
+            inputText = inputBytes.toString("UTF8");
+            
         }
         
         ITextRenderer renderer = new ITextRenderer();

@@ -1,1 +1,0 @@
-java -cp pdfgen.jar com.floledermann.pdf.PDFRenderer ../sample/input.html output.pdf

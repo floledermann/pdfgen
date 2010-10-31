@@ -4,21 +4,25 @@
 }
 	
 @font-face {
-	font-family: Webdings;
-	src:url('webdings.ttf');
+	font-family: Philosopher;
+	src:url('philosopher.ttf');
 	-fs-pdf-font-embed: embed;
 	}
+
+@page {
+  size: 210mm 297mm;
+  margin-left:15mm;
+  margin-right:15mm;
+  margin-top:15mm;
+  margin-bottom:15mm;
+}
 
 @page:first {
   size: 297mm 210mm;
 }
 
-@page {
-  size: 210mm 297mm;
-  margin-left:12,7mm;
-  margin-right:12,7mm;
-  margin-top:11,5mm;
-  margin-bottom:11,5mm;
+body {
+	font-family: Philosopher;
 }
   
 .firstPage{

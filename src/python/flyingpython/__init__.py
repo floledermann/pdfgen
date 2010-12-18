@@ -3,6 +3,8 @@ import codecs
 import sys
 import os
 
+#from pkg_resources import resource_filename
+
 
 def get_jar_path():
     """Return the full path to the PDFGen Java archive."""

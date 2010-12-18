@@ -12,11 +12,15 @@ setup(
     license='GPL',
     package_dir = {'': 'src/python'},
     packages=['flyingpython'],
-    entry_points = {
-        'console_scripts': [
-            'html2pdf = flyingpython:html_to_pdf',
-        ],
-    },
+    #include_package_data=True,
+#    entry_points = {
+#        'console_scripts': [
+#            'html2pdf = flyingpython:html_to_pdf',
+#        ],
+#    },
+#    package_data={
+#        'flyingpython': ['*.jar']
+#    },
     data_files=[('bin/pdfgen',['scripts/pdfgen.jar'])],
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -26,6 +30,8 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
+    # we need filesystem access to pdfgen.jar
+    zip_safe=False,
     # Make setuptools include all data files under version control,
     # svn and CVS by default
     # include_package_data=True,

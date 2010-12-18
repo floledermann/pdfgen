@@ -9,9 +9,18 @@ setup(
     author='Flo Ledermann',
     author_email='ledermann@ims.tuwien.ac.at',
     url='http://bitbucket.org/floledermann/pdfgen/',
+    license='GPL',
     package_dir = {'': 'src/python'},
     packages=['flyingpython'],
-    data_files=[('bin',['scripts/pdfgen.jar'])],
+    package_data={
+        'flyingpython': ["scripts/*.jar"]
+    },
+    entry_points = {
+        'console_scripts': [
+            'html2pdf = flyingpython:html_to_pdf',
+        ],
+    },
+    #data_files=[('bin/pdfgen',['scripts/pdfgen.jar'])],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

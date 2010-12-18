@@ -12,15 +12,15 @@ setup(
     license='GPL',
     package_dir = {'': 'src/python'},
     packages=['flyingpython'],
-    package_data={
-        'flyingpython': ["scripts/*.jar"]
-    },
+#    package_data={
+#        'flyingpython': ['scripts/*.jar']
+#    },
     entry_points = {
         'console_scripts': [
             'html2pdf = flyingpython:html_to_pdf',
         ],
     },
-    #data_files=[('bin/pdfgen',['scripts/pdfgen.jar'])],
+    data_files=[('bin/pdfgen',['scripts/pdfgen.jar'])],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

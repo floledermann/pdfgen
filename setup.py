@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
  
 setup(
     name='django-flyingsaucer',
-    version='0.9',
+    version='0.1',
     description='A Python wrapper for the Java Flying Saucer library.',
     author='Flo Ledermann',
     author_email='ledermann@ims.tuwien.ac.at',

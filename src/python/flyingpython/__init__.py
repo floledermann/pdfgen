@@ -1,9 +1,13 @@
+import subprocess
+import codecs
+import sys
+import os
 
 
 def get_jar_path():
     """Return the full path to the PDFGen Java archive."""
     #return resource_filename(__name__, "pdfgen.jar")
-    return 'bin/pdfgen/pdfgen.jar'
+    return os.path.join(sys.prefix, 'bin/pdfgen/pdfgen.jar')
 
 PDF_COMMAND = 'java -cp %s com.floledermann.pdf.PDFRenderer' % get_jar_path()
 
@@ -13,9 +17,7 @@ def html_to_pdf(html):
                          stdout=subprocess.PIPE, 
                          stdin=subprocess.PIPE, 
                          stderr=subprocess.PIPE)
-    
-    import sys, codecs, locale   
-        
+            
     p2 = codecs.getwriter('utf-8')(p.stdin)    
     p2.write(html)
     p2.close()

@@ -12,9 +12,6 @@ setup(
     license='GPL',
     package_dir = {'': 'src/python'},
     packages=['flyingpython'],
-#    package_data={
-#        'flyingpython': ['scripts/*.jar']
-#    },
     entry_points = {
         'console_scripts': [
             'html2pdf = flyingpython:html_to_pdf',

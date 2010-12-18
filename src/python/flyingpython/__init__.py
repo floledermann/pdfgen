@@ -1,8 +1,14 @@
 
-PDF_COMMAND = 'java -cp bin/pdfgen.jar com.floledermann.pdf.PDFRenderer'
+
+def get_jar_path():
+    """Return the full path to the PDFGen Java archive."""
+    #return resource_filename(__name__, "pdfgen.jar")
+    return 'bin/pdfgen/pdfgen.jar'
+
+PDF_COMMAND = 'java -cp %s com.floledermann.pdf.PDFRenderer' % get_jar_path()
 
 def html_to_pdf(html):
-    p = subprocess.Popen(settings.PDF_COMMAND, 
+    p = subprocess.Popen(PDF_COMMAND, 
                          shell=True, 
                          stdout=subprocess.PIPE, 
                          stdin=subprocess.PIPE, 

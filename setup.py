@@ -11,6 +11,7 @@ setup(
     url='http://bitbucket.org/floledermann/pdfgen/',
     package_dir = {'': 'src/python'},
     packages=['flyingpython'],
+    data_files=[('bin',['scripts/pdfgen.jar']],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

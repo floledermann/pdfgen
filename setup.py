@@ -10,7 +10,7 @@ setup(
     author_email='ledermann@ims.tuwien.ac.at',
     url='http://bitbucket.org/floledermann/pdfgen/',
     package_dir = {'': 'src/python'},
-    packages=find_packages(),
+    packages=['flyingpython'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',

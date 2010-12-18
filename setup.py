@@ -3,9 +3,9 @@
 from setuptools import setup, find_packages
  
 setup(
-    name='django-flyingsaucer',
+    name='python-flyingsaucer',
     version='0.1',
-    description='A Python wrapper for the Java Flying Saucer library.',
+    description='A Python wrapper for generating PDFs using the Flying Saucer Java library.',
     author='Flo Ledermann',
     author_email='ledermann@ims.tuwien.ac.at',
     url='http://bitbucket.org/floledermann/pdfgen/',

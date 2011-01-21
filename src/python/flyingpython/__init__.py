@@ -11,7 +11,7 @@ def get_jar_path():
     #return resource_filename(__name__, "pdfgen.jar")
     return os.path.join(sys.prefix, 'bin/pdfgen/pdfgen.jar')
 
-PDF_COMMAND = 'java -cp %s com.floledermann.pdf.PDFRenderer' % get_jar_path()
+PDF_COMMAND = 'java -Djava.awt.headless=true -cp %s com.floledermann.pdf.PDFRenderer' % get_jar_path()
 
 def html_to_pdf(html):
     p = subprocess.Popen(PDF_COMMAND, 

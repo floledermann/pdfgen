@@ -15,4 +15,4 @@ outfile=$2;;
 usage;exit;;
 esac
 
-java -cp ./pdfgen.jar com.floledermann.pdf.PDFRenderer $1 $outfile
+java -cp `dirname $0`/pdfgen.jar -Dxr.load.xml-reader=nu.validator.htmlparser.sax.HtmlParser com.floledermann.pdf.PDFRenderer $1 $outfile

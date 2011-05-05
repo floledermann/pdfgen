@@ -1,3 +1,5 @@
 glob:bin/
 glob:dist/pdfgen.zip
 glob:sample/webdings.ttf
+glob:resources
+glob:scripts/pdfgen.jar

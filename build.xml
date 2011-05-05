@@ -6,6 +6,7 @@
 
 	<target name="init" description="Create output folders">
 
+		<mkdir dir="bin" />
 		<mkdir dir="dist" />
 
 	</target>
@@ -21,12 +22,13 @@
 		</javac>
 	</target>
 
-	<target name="package">
+	<target name="package" depends="compile">
 		<delete file="scripts/pdfgen.jar" />
         <jar destfile="scripts/pdfgen.jar">
             <fileset dir="bin"/>
             <zipfileset src="lib/core-renderer.jar" excludes="META-INF/*" />
             <zipfileset src="lib/iText-2.0.8.jar" excludes="META-INF/*" />
+            <zipfileset src="lib/htmlparser-1.3.1.jar" excludes="META-INF/*" />
             <manifest>
                 <attribute name="Built-By" value="floledermann.com" />
                 <attribute name="Implementation-Vendor" value="Florian Ledermann Digital Infrastructures" />
